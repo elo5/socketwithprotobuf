@@ -1,0 +1,54 @@
+enum _em_server_message 
+{
+	WS_MSG_SERVER_LOGIN_RESP            	=100;	
+	WS_MSG_SERVER_LOGIN_NOTIFY            	=101;
+	WS_MSG_SERVER_CHAT_RESP            		=102;
+	WS_MSG_SERVER_CHAT_NOTIFY            	=103;
+}
+
+enum _em_client_message
+{
+	WS_MSG_CLIENT_LOGIN_REQ             =100;
+	WS_MSG_CLIENT_CHAT_REQ             =101;	
+}
+
+enum _en_error_type
+{
+  	LOGIN_SUCCESS                      =200;
+  	LOGIN_FAILED_WRONG_PASS            =201;
+  	CHAT_SUCCESS					   =202;
+}
+
+
+message _msg_login_req
+{
+	required  int32      user_id           =1;
+	required  string     user_pass         =2;
+}
+
+message _msg_login_resp
+{
+	required  int32             error_code      		=1;
+}
+
+message _msg_login_notify
+{
+	required  int32             user_id      		=1;
+}
+
+message _msg_chat_req
+{
+	required  int32      user_id           =1;
+	required  string     chat_content         =2;
+}
+
+message _msg_chat_resp
+{
+	required  int32             error_code      		=1;
+}
+
+message _msg_chat_notify
+{
+	required  int32      user_id           =1;
+	required  string     chat_content         =2;
+}
