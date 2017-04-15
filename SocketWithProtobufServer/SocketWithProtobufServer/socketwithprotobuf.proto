@@ -1,3 +1,5 @@
+syntax = "proto2";
+
 enum _em_server_message 
 {
 	WS_MSG_SERVER_LOGIN_RESP            	=100;	
